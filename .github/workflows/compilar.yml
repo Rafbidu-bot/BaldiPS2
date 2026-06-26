@@ -1,0 +1,21 @@
+name: Compilar Jogo de PS2
+
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: ps2dev/ps2dev:latest
+    steps:
+      - name: Baixar o código do jogo
+        uses: actions/checkout@v3
+
+      - name: Compilar o baldi.elf
+        run: |
+          ee-g++ -o baldi.elf main.cpp -lgs -lpad
+
+      - name: Guardar o arquivo pronto
+        uses: actions/upload-artifact@v3
+        with:
+          name: Jogo-Baldi-ELF
+          path: baldi.elf
