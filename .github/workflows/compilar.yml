@@ -8,7 +8,7 @@ jobs:
     container: ps2dev/ps2dev:latest
     steps:
       - name: Baixar o código do jogo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Compilar o baldi.elf
         run: |
