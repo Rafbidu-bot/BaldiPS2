@@ -12,7 +12,7 @@ jobs:
 
       - name: Compilar o baldi.elf
         run: |
-          /usr/local/ps2dev/ee/bin/ee-g++ -o baldi.elf main.cpp -I/usr/local/ps2dev/ee/ee/include -L/usr/local/ps2dev/ee/ee/lib -lgs -lpad
+          mips64r5900el-ps2-elf-g++ -o baldi.elf main.cpp -lgs -lpad
 
       - name: Guardar o arquivo pronto
         uses: actions/upload-artifact@v4
