@@ -12,6 +12,7 @@ jobs:
 
       - name: Compilar o baldi.elf
         run: |
+          source /etc/profile
           ee-g++ -o baldi.elf main.cpp -lgs -lpad
 
       - name: Guardar o arquivo pronto
